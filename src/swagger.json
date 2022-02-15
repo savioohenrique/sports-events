@@ -1,0 +1,9 @@
+{
+  "info": {
+    "title": "Documentation",
+    "version": "1.0.0",
+    "description": "This is an API"
+  },
+  "openapi": "3.0.3",
+  "paths": {}
+}

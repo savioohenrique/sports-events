@@ -1,0 +1,27 @@
+version: "3.7"
+
+services:
+  database_api:
+    image: postgis/postgis
+    container_name: database_api
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=api
+      - POSTGRES_DB=api
+    volumes:
+      - pgdata:/data/postgres
+    network_mode: host
+  app:
+    build: .
+    container_name: api
+    ports:
+      - 3332:3332
+    volumes:
+      - .:/usr/app
+    network_mode: host
+
+volumes:
+  pgdata:
